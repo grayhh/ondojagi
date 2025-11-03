@@ -11,6 +11,9 @@ export const metadata: Metadata = {
   title: "온도자기 Ondojagi - Korean Pottery Studio",
   description: "A calm pottery studio that values the warmth of handmade work and the beauty of Korean tradition.",
   generator: "v0.app",
+  icons: {
+    icon: "/icon.svg",
+  },
 }
 
 export default function RootLayout({
