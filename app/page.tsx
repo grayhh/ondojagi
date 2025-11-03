@@ -78,7 +78,7 @@ function HeroSlider() {
   }, [slides.length])
 
   return (
-    <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden mt-[88px]">
+    <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden mt-[82px]">
       {slides.map((slide, index) => (
         <div
           key={index}
