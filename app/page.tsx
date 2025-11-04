@@ -11,8 +11,8 @@ export default function Home() {
             {/* Fixed Header */}
             <header className="fixed top-0 left-0 right-0 bg-warm-bg/95 backdrop-blur-sm border-b border-warm-border z-50">
                 <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-                    <div className="relative h-10 w-32">
-                        <Image src="/ondojagi.png" alt="온도자기 Ondojagi" fill className="object-contain object-left" priority />
+                    <div className="relative h-16 w-96">
+                        <Image src="/ondojagi-logo.png" alt="온도자기 Ondojagi" fill className="object-contain object-left" priority />
                     </div>
                     {/* </CHANGE> */}
                     <nav className="flex gap-8">
@@ -81,7 +81,7 @@ function HeroSlider() {
     }, [slides.length])
 
     return (
-        <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden mt-[88px]">
+        <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden mt-[113px]">
             {slides.map((slide, index) => (
                 <div
                     key={index}

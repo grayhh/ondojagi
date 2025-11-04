@@ -8,6 +8,7 @@ const _geist = Geist({ subsets: ["latin"] })
 const _geistMono = Geist_Mono({ subsets: ["latin"] })
 
 export const metadata: Metadata = {
+    metadataBase: new URL("https://ondojagi.kr"),
     title: "온도자기 Ondojagi - Korean Pottery Studio",
     description: "A calm pottery studio that values the warmth of handmade work and the beauty of Korean tradition.",
     generator: "v0.app",
@@ -21,7 +22,7 @@ export const metadata: Metadata = {
         siteName: "온도자기 Ondojagi",
         images: [
             {
-                url: "/og-image.jpg",
+                url: "/ondojagi.jpg",
                 width: 1200,
                 height: 630,
                 alt: "온도자기 Ondojagi",
@@ -34,7 +35,7 @@ export const metadata: Metadata = {
         card: "summary_large_image",
         title: "온도자기 Ondojagi - Korean Pottery Studio",
         description: "A calm pottery studio that values the warmth of handmade work and the beauty of Korean tradition.",
-        images: ["/og-image.jpg"],
+        images: ["/ondojagi.jpg"],
     },
 }
 // </CHANGE>
