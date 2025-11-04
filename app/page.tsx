@@ -10,24 +10,23 @@ export default function Home() {
         <div className="min-h-screen bg-warm-bg">
             {/* Fixed Header */}
             <header className="fixed top-0 left-0 right-0 bg-warm-bg/95 backdrop-blur-sm border-b border-warm-border z-50">
-                <div className="max-w-6xl mx-auto px-6 py-6 flex items-center justify-between">
-                    <div className="relative h-16 w-96">
+                <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
+                    <div className="relative h-12 w-48 md:h-20 md:w-80">
                         <Image src="/ondojagi-logo.png" alt="온도자기 Ondojagi" fill className="object-contain object-left" priority />
                     </div>
-                    {/* </CHANGE> */}
-                    <nav className="flex gap-8">
+                    <nav className="flex gap-4 md:gap-8">
                         <button
                             onClick={() => setActiveSection("intro")}
-                            className={`text-base font-light transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 cursor-pointer ${
-                                activeSection === "intro" ? "text-warm-accent" : "text-warm-text-muted hover:text-warm-accent"
+                            className={`text-sm md:text-base font-medium transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 cursor-pointer ${
+                                activeSection === "intro" ? "text-warm-accent" : "text-warm-text hover:text-warm-accent"
                             }`}
                         >
                             소개
                         </button>
                         <button
                             onClick={() => setActiveSection("location")}
-                            className={`text-base font-light transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 cursor-pointer ${
-                                activeSection === "location" ? "text-warm-accent" : "text-warm-text-muted hover:text-warm-accent"
+                            className={`text-sm md:text-base font-medium transition-all duration-200 hover:scale-105 hover:-translate-y-0.5 cursor-pointer whitespace-nowrap ${
+                                activeSection === "location" ? "text-warm-accent" : "text-warm-text hover:text-warm-accent"
                             }`}
                         >
                             오시는 길
@@ -81,7 +80,7 @@ function HeroSlider() {
     }, [slides.length])
 
     return (
-        <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden mt-[113px]">
+        <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden mt-[88px]">
             {slides.map((slide, index) => (
                 <div
                     key={index}
