@@ -12,7 +12,7 @@ export default function Home() {
             <header className="fixed top-0 left-0 right-0 bg-warm-bg/95 backdrop-blur-sm border-b border-warm-border z-50">
                 <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
                     <div className="relative h-12 w-48 md:h-20 md:w-80">
-                        <Image src="/ondojagi-logo.png" alt="온도자기 Ondojagi" fill className="object-contain object-left" priority />
+                        <Image src="/logo.png" alt="온도자기 Ondojagi" fill className="object-contain object-left" priority />
                     </div>
                     <nav className="flex gap-4 md:gap-8">
                         <button
@@ -128,39 +128,80 @@ function IntroSection() {
                 </p>
             </div>
 
-            {/* Photo Grid */}
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
-                <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                    <Image
-                        src="/korean-pottery-studio-interior-with-natural-light-.jpg"
-                        alt="Studio interior"
-                        fill
-                        className="object-cover"
-                    />
+            {/* Pottery Gallery - Masonry Layout */}
+            <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
+                {/* Left Column */}
+                <div className="flex flex-col gap-4">
+                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-5.jpeg" alt="Ceramic reindeer family" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-square relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-3.jpeg" alt="Happy pig ceramics" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-1.jpeg" alt="Miniature house terrarium" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-video relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image
+                            src="/ondojagi-img-13.jpeg"
+                            alt="Boat-shaped ceramic planter with succulents"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="aspect-square relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-12.jpeg" alt="Traditional Korean lady figurines" fill className="object-cover" />
+                    </div>
                 </div>
-                <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                    <Image
-                        src="/handmade-korean-ceramic-pottery-pieces-on-display.jpg"
-                        alt="Pottery pieces"
-                        fill
-                        className="object-cover"
-                    />
+
+                {/* Center Column */}
+                <div className="flex flex-col gap-4">
+                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-6.jpeg" alt="Pagoda tower ceramic" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-4.jpeg" alt="Wedding couple ceramics" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-9.jpeg" alt="Traditional Korean house ceramic" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image
+                            src="/ondojagi-img-14.jpeg"
+                            alt="Round traditional Korean house container"
+                            fill
+                            className="object-cover"
+                        />
+                    </div>
+                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-16.jpeg" alt="Rustic house terrarium with moss" fill className="object-cover" />
+                    </div>
                 </div>
-                <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                    <Image
-                        src="/potter-hands-shaping-clay-on-pottery-wheel.jpg"
-                        alt="Pottery making process"
-                        fill
-                        className="object-cover"
-                    />
+
+                {/* Right Column */}
+                <div className="flex flex-col gap-4">
+                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-2.jpeg" alt="Whimsical building ceramics" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-10.jpeg" alt="Flower tower ceramic" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-8.jpeg" alt="Illuminated house ceramic" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-square relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-11.jpeg" alt="Large ceramic cat figurines" fill className="object-cover" />
+                    </div>
+                    <div className="aspect-video relative bg-warm-card rounded-sm overflow-hidden">
+                        <Image src="/ondojagi-img-15.jpeg" alt="Bowl with miniature village arch" fill className="object-cover" />
+                    </div>
                 </div>
-                <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                    <Image
-                        src="/minimalist-korean-ceramic-bowls-and-cups.jpg"
-                        alt="Ceramic collection"
-                        fill
-                        className="object-cover"
-                    />
+            </div>
+
+            {/* Featured Wall Display */}
+            <div className="mt-8 max-w-6xl mx-auto">
+                <div className="aspect-[16/9] relative bg-warm-card rounded-sm overflow-hidden">
+                    <Image src="/ondojagi-img-7.jpeg" alt="Wall mounted pottery display" fill className="object-cover" />
                 </div>
             </div>
         </div>
