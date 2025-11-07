@@ -12,7 +12,7 @@ export default function Home() {
             <header className="fixed top-0 left-0 right-0 bg-warm-bg/95 backdrop-blur-sm border-b border-warm-border z-50">
                 <div className="max-w-6xl mx-auto px-4 md:px-6 py-4 md:py-6 flex items-center justify-between">
                     <div className="relative h-12 w-48 md:h-20 md:w-80">
-                        <Image src="/logo.png" alt="온도자기 Ondojagi" fill className="object-contain object-left" priority />
+                        <Image src="/ondojagi-logo.png" alt="온도자기 Ondojagi" fill className="object-contain object-left" priority />
                     </div>
                     <nav className="flex gap-4 md:gap-8">
                         <button
