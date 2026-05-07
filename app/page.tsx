@@ -3,6 +3,50 @@
 import { useState, useEffect } from "react"
 import Image from "next/image"
 
+const heroSlides = [
+    {
+        src: "/ondojagi_0506_00001.jpeg",
+        alt: "Ondojagi studio photo 1",
+    },
+    {
+        src: "/ondojagi_0506_00002.jpeg",
+        alt: "Ondojagi studio photo 2",
+    },
+    {
+        src: "/ondojagi_0506_00003.jpeg",
+        alt: "Ondojagi studio photo 3",
+    },
+]
+
+const galleryColumns = [
+    [
+        "/ondojagi_0506_00004.jpeg",
+        "/ondojagi_0506_00005.jpeg",
+        "/ondojagi_0506_00006.jpeg",
+        "/ondojagi_0506_00007.jpeg",
+        "/ondojagi_0506_00008.jpeg",
+        "/ondojagi_0506_00009.jpeg",
+        "/ondojagi_0506_00010.jpeg",
+    ],
+    [
+        "/ondojagi_0506_00011.jpeg",
+        "/ondojagi_0506_00012.jpeg",
+        "/ondojagi_0506_00013.jpeg",
+        "/ondojagi_0506_00014.jpeg",
+        "/ondojagi_0506_00015.jpeg",
+        "/ondojagi_0506_00016.jpeg",
+        "/ondojagi_0506_00017.jpeg",
+    ],
+    [
+        "/ondojagi_0506_00018.jpeg",
+        "/ondojagi_0506_00019.jpeg",
+        "/ondojagi_0506_00020.jpeg",
+        "/ondojagi_0506_00021.jpeg",
+        "/ondojagi_0506_00022.jpeg",
+        "/ondojagi_0506_00023.jpeg",
+    ],
+]
+
 export default function Home() {
     const [activeSection, setActiveSection] = useState<"intro" | "location">("intro")
 
@@ -56,32 +100,17 @@ export default function Home() {
 function HeroSlider() {
     const [currentSlide, setCurrentSlide] = useState(0)
 
-    const slides = [
-        {
-            src: "/korean-pottery-studio-wide-angle-with-shelves-of-cer.jpg",
-            alt: "Pottery studio interior",
-        },
-        {
-            src: "/artisan-hands-working-on-pottery-wheel-close-up.jpg",
-            alt: "Artisan at work",
-        },
-        {
-            src: "/beautiful-korean-ceramic-collection-on-wooden-table.jpg",
-            alt: "Ceramic collection",
-        },
-    ]
-
     useEffect(() => {
         const timer = setInterval(() => {
-            setCurrentSlide((prev) => (prev + 1) % slides.length)
+            setCurrentSlide((prev) => (prev + 1) % heroSlides.length)
         }, 4000)
 
         return () => clearInterval(timer)
-    }, [slides.length])
+    }, [])
 
     return (
         <div className="relative w-full h-[300px] md:h-[350px] overflow-hidden mt-[88px]">
-            {slides.map((slide, index) => (
+            {heroSlides.map((slide, index) => (
                 <div
                     key={index}
                     className={`absolute inset-0 transition-opacity duration-1000 ${
@@ -100,7 +129,7 @@ function HeroSlider() {
 
             {/* Slide indicators */}
             <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex gap-2 z-10">
-                {slides.map((_, index) => (
+                {heroSlides.map((_, index) => (
                     <button
                         key={index}
                         onClick={() => setCurrentSlide(index)}
@@ -130,78 +159,26 @@ function IntroSection() {
 
             {/* Pottery Gallery - Masonry Layout */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 max-w-6xl mx-auto">
-                {/* Left Column */}
-                <div className="flex flex-col gap-4">
-                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-5.jpeg" alt="Ceramic reindeer family" fill className="object-cover" />
+                {galleryColumns.map((column, columnIndex) => (
+                    <div key={columnIndex} className="flex flex-col gap-4">
+                        {column.map((src, imageIndex) => (
+                            <div key={src} className="aspect-[3/2] relative bg-warm-card rounded-sm overflow-hidden">
+                                <Image
+                                    src={src}
+                                    alt={`Ondojagi studio photo ${columnIndex * 7 + imageIndex + 4}`}
+                                    fill
+                                    className="object-cover"
+                                />
+                            </div>
+                        ))}
                     </div>
-                    <div className="aspect-square relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-3.jpeg" alt="Happy pig ceramics" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-1.jpeg" alt="Miniature house terrarium" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-video relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image
-                            src="/ondojagi-img-13.jpeg"
-                            alt="Boat-shaped ceramic planter with succulents"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                    <div className="aspect-square relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-12.jpeg" alt="Traditional Korean lady figurines" fill className="object-cover" />
-                    </div>
-                </div>
-
-                {/* Center Column */}
-                <div className="flex flex-col gap-4">
-                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-6.jpeg" alt="Pagoda tower ceramic" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-4.jpeg" alt="Wedding couple ceramics" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-9.jpeg" alt="Traditional Korean house ceramic" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image
-                            src="/ondojagi-img-14.jpeg"
-                            alt="Round traditional Korean house container"
-                            fill
-                            className="object-cover"
-                        />
-                    </div>
-                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-16.jpeg" alt="Rustic house terrarium with moss" fill className="object-cover" />
-                    </div>
-                </div>
-
-                {/* Right Column */}
-                <div className="flex flex-col gap-4">
-                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-2.jpeg" alt="Whimsical building ceramics" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-[3/4] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-10.jpeg" alt="Flower tower ceramic" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-[4/3] relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-8.jpeg" alt="Illuminated house ceramic" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-square relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-11.jpeg" alt="Large ceramic cat figurines" fill className="object-cover" />
-                    </div>
-                    <div className="aspect-video relative bg-warm-card rounded-sm overflow-hidden">
-                        <Image src="/ondojagi-img-15.jpeg" alt="Bowl with miniature village arch" fill className="object-cover" />
-                    </div>
-                </div>
+                ))}
             </div>
 
             {/* Featured Wall Display */}
             <div className="mt-8 max-w-6xl mx-auto">
-                <div className="aspect-[16/9] relative bg-warm-card rounded-sm overflow-hidden">
-                    <Image src="/ondojagi-img-7.jpeg" alt="Wall mounted pottery display" fill className="object-cover" />
+                <div className="aspect-[3/2] relative bg-warm-card rounded-sm overflow-hidden">
+                    <Image src="/ondojagi_0506_00024.jpeg" alt="Ondojagi studio photo 24" fill className="object-cover" />
                 </div>
             </div>
         </div>
